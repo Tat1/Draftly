@@ -13,21 +13,24 @@ Database with all the Databases
 ```
 source venv/bin/activate
 
-python app/database/tester.py
+python app/database/plotline.py
 
-sqlite_web database.db
+sqlite_web my-database.db 
+
 ```
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Screenshot%202020-04-22%20at%2010.40.45.png)
 
 Databse with the foreign linkage
 
 ```
 source venv/bin/activate
 
-python app/database/plotline.py
+python app/database/tester.py
 
-sqlite_web my-database.db 
+sqlite_web database.db
+
 ```
-
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Screenshot%202020-04-22%20at%2010.40.32.png)
 ---
 
 ### Lists of Tables
