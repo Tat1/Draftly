@@ -9,7 +9,7 @@ My project currently called Draft is about providing a product or service that e
 Bare Bones of How it looks currently 
 file:///Users/tatidisu/Documents/GitHub/DraftInteractive/app/templates/index.html
 
-![screen grab]()
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Index%20Bare%20Draft.png)
 
 
 How to get it working
@@ -27,7 +27,7 @@ python app/database/plotline.py
 sqlite_web my-database.db 
 
 ```
-![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Screenshot%202020-04-22%20at%2010.40.45.png)
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Database%20with%20Tables.png)
 
 Databse with the foreign linkage
 
@@ -39,7 +39,7 @@ python app/database/tester.py
 sqlite_web database.db
 
 ```
-![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Screenshot%202020-04-22%20at%2010.40.32.png)
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Database%20with%20Linkage%20.png)
 ---
 
 ### Lists of Tables
