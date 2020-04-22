@@ -6,6 +6,30 @@ My project currently called Draft is about providing a product or service that e
 
 ---
 
+How to get it working
+
+Database with all the Databases 
+
+```
+source venv/bin/activate
+
+python app/database/tester.py
+
+sqlite_web database.db
+```
+
+Databse with the foreign linkage
+
+```
+source venv/bin/activate
+
+python app/database/plotline.py
+
+sqlite_web my-database.db 
+```
+
+---
+
 ### Lists of Tables
 
 * Table of Story (Dynamic)
@@ -24,7 +48,8 @@ My project currently called Draft is about providing a product or service that e
 
 ---
 
-### Story (Dynamic)
+### Story(Dynamic)
+
 This is populated by the user.
 Name of  Story
 New Story Created.
@@ -132,6 +157,7 @@ Given a plot line, that tells us what phases we go through and then for every ph
 We have a table here which is a table of 3 , foreign keys for plot, phase and role.
 
 Given the plot line you can filter that table down, so that gives you phases and roles, as you work through the phases  that gives you the role you need to pick out for that phases and plot line in order to allow selection of the character and to have that block of text entered.
+
 
 
 
