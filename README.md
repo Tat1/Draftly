@@ -6,11 +6,21 @@ My project currently called Draft is about providing a product or service that e
 
 ---
 
-Bare Bones of How it looks currently 
+# Bare Bones of How it looks currently 
 
 file:///Users/tatidisu/Documents/GitHub/DraftInteractive/app/templates/index.html
 
 ![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Index%20Bare%20Draft.png)
+
+
+# Concept Sketches
+
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Nav%20ver1.jpg)
+
+# Database Sketch
+
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/linkage.jpg)
+
 
 ---
 
@@ -36,7 +46,7 @@ sqlite_web my-database.db
 ![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Database%20with%20Tables.png)
 
 
-*Database with the foreign linkage
+* Database with the foreign linkage
 
 ```
 source venv/bin/activate
@@ -45,8 +55,8 @@ python app/database/tester.py
 
 sqlite_web database.db
 ```
-
 ![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Database%20with%20Linkage%20.png)
+
 
 ---
 
