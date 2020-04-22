@@ -6,7 +6,16 @@ My project currently called Draft is about providing a product or service that e
 
 ---
 
+Bare Bones of How it looks currently 
+file:///Users/tatidisu/Documents/GitHub/DraftInteractive/app/templates/index.html
+
+![screen grab]()
+
+
 How to get it working
+
+Using Pewee
+
 
 Database with all the Databases 
 
