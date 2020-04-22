@@ -17,6 +17,7 @@ python app/database/tester.py
 
 sqlite_web database.db
 ```
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Screenshot%202020-04-22%20at%2010.40.45.png)
 
 Databse with the foreign linkage
 
@@ -27,7 +28,7 @@ python app/database/plotline.py
 
 sqlite_web my-database.db 
 ```
-
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/Screenshot%202020-04-22%20at%2010.40.32.png)
 ---
 
 ### Lists of Tables
