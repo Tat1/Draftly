@@ -3,6 +3,11 @@ import sqlalchemy
 from sqlalchemy import create_engine
 from sqlalchemy import ForeignKey
 from sqlalchemy.orm import relationship
+
+# Persistant file-based databse:
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Table, Column, Integer, String
+
 from peewee import *
 
 #In memory Database
@@ -10,23 +15,24 @@ from peewee import *
 
 engine = create_engine('sqlite:///my-database.db', echo=True)
 
-# Persistant file-based databse:
-from sqlalchemy.ext.declarative import declarative_base
+
 Base = declarative_base()
 
-from sqlalchemy import Table, Column, Integer, String
-
-
+#Many to one between story and plotline, stories have foreign key linksge , primary key to plotline
 # Story (DYNAMIC)
 class Story(Base) :
-    __tablename__ = 'storys'
+    __tablename__ = 'story'
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    #children = relationship("Plotline", back_populates="storys")
     
+    plot_id = Column(Integer, ForeignKey('plotline.id'))
+    
+    plot = relationship("Plotline", foreign_keys=[plot_id])
+
     def __repr__(self):
         return "<Story(name='%s')>" % (self.name)
+
     
 Base.metadata.create_all(engine)
 
@@ -36,9 +42,10 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
+#Character has foreign key that goes to role, linkage from character to story many to one, many to one linkage from character to role
 # Character (DYNAMIC)
 class Character(Base) :
-    __tablename__ = 'characters'
+    __tablename__ = 'character'
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -54,9 +61,10 @@ Session = sessionmaker(bind=engine)
 session = Session()
 
 
+#linkage from paragraph into charcater many to one, character-> role-> story-> plotline
 # Paragraph (DYNAMIC)
 class Paragraph(Base) :
-    __tablename__ = 'paragraphs'
+    __tablename__ = 'paragraph'
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -75,19 +83,16 @@ session = Session()
 # Plotline (FIXED)
 #7 Basic Story Archetypes by Christopher Booker
 class Plotline(Base) :
-    child = ForeignKeyField(Story, backref='plotlines')
-    __tablename__ = 'plotlines'
+    __tablename__ = 'plotline'
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
-    #storys_id = Column(Integer, ForeignKey('storys.id'))
-    #storys = relationship("Story", back_populates="children")
 
     def __repr__(self):
         return "<Plotline(name='%s')>" % (self.name)
 
 Base.metadata.create_all(engine)
-#PRAGMA main.table_info("storys")
+
 
 from sqlalchemy.orm import sessionmaker
 Session = sessionmaker(bind=engine)
@@ -126,7 +131,7 @@ session.commit()
 # Role (FIXED)
 #7 Abstract Character Functions by Vladimir Propp
 class Role(Base) :
-    __tablename__ = 'roles'
+    __tablename__ = 'role'
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -173,7 +178,7 @@ session.commit()
 # Archetype (FIXED)
 #12 Jungian Archetypes by Carl Jung
 class Archetype(Base) :
-    __tablename__ = 'archetypes'
+    __tablename__ = 'archetype'
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -244,7 +249,7 @@ session.commit()
 #7 Basic Story Archetypes by Christopher Booker
 #Story Empire Blog by Staci Troilo
 class Phase(Base) :
-    __tablename__ = 'phases'
+    __tablename__ = 'phase'
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -405,7 +410,7 @@ session.commit()
 
 # Linkage (FIXED)
 class Linkage(Base) :
-    __tablename__ = 'linkages'
+    __tablename__ = 'linkage'
     
     id = Column(Integer, primary_key=True)
     name = Column(String)
@@ -419,4 +424,8 @@ from sqlalchemy.orm import sessionmaker
 Session = sessionmaker(bind=engine)
 
 session = Session()
+
+#link plotline roles and phases, given plotline tells phase and every phase has a role
+#Table - 3 Foreign keys for plot, phase, role
+
 
