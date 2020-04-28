@@ -3,9 +3,11 @@ from app import app
 from app.storynameform import LoginForm
 
 @app.route('/')
-@app.route('/startup')
-def index():
-     return render_template('startup.html')
+
+#@app.route('/startup')
+#def index():
+     #return render_template('startup.html')
+
 
 @app.route('/newstory')
 def newstory():
