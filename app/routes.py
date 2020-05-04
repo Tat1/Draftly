@@ -8,8 +8,15 @@ from app.storynameform import LoginForm
 #def index():
      #return render_template('startup.html')
 
+#@app.route('/newstory')
+#def newstory():
+    #form = LoginForm()
+    #return render_template('newstory.html', form=form)
 
-@app.route('/newstory')
-def newstory():
-    form = LoginForm()
-    return render_template('newstory.html', form=form)
+#@app.route('/loadstory')
+#def index():
+     #return render_template('loadstory.html')
+    
+@app.route('/charactercreation')
+def index():
+     return render_template('charactercreation.html')

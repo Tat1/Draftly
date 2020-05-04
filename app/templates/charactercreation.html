@@ -26,13 +26,13 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Current Story <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Current Story </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Load Story</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Character Creation</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Character Creation <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Story Paragraphs</a>
@@ -40,8 +40,7 @@
                 </ul>
             </div>
         </nav>
-
-
+        
       <DIV class="container">
           
           <DIV class="starter-template">
@@ -52,7 +51,7 @@
               
               <DIV class="row">
                   <DIV class="col-md-12" >
-                      <h2>Story Creation Page</h2>
+                      <h2>Character Creation Page</h2>
                   </DIV>
                   
                   <DIV class="row">
@@ -63,30 +62,42 @@
                           <DIV class="form-group align-items-center">
                                   <!--<label class="sr-only" for="inlineFormInputName">{{ form.storyname.label }}</label>-->
                                   
-                                  <label for="StorynameFormControlInput">Name your Story</label>
-                                  <input type="text" class="form-control" id="StorynameFormControlInput" placeholder="Name">
+                                  <label for="CharacternameFormControlInput">Name your Character</label>
+                                  <input type="text" class="form-control" id="CharacternameFormControlInput" placeholder="Name">
                           </DIV>
                           
                           <DIV class="form-group align-items-center">
-                              <label for="PlotlineControlSelect">Choose a Plotline</label>
-                              <select class="form-control" id="PlotlineControlSelect">
-                                  <option>Overcoming the Monster</option>
-                                  <option>Rags to Riches</option>
-                                  <option>The Quest</option>
-                                  <option>Voyage and Return</option>
-                                  <option>Comedy</option>
-                                  <option>Tragedy</option>
-                                  <option>Rebirth</option>
+                              <label for="RoleControlSelect">Choose a Role</label>
+                              <select class="form-control" id="RoleControlSelect">
+                                  <option>The Villainr</option>
+                                  <option>The Dispatcher</option>
+                                  <option>The Helper</option>
+                                  <option>The Love Interest</option>
+                                  <option>The Donor</option>
+                                  <option>The Hero</option>
+                                  <option>The False Hero</option>
                               </select>
                           </DIV>
                           
                           <DIV class="form-group align-items-center">
-                              <label for="CharacterFormControl">Create Character</label>
-                              <input class="CharacterFormControl" type="text" placeholder="No Character" readonly> 
+                              <label for="ArchetypeControlSelect">Choose an Archetype</label>
+                              <select class="form-control" id="ArchetypeControlSelect">
+                                  <option>Innocent</option>
+                                  <option>Orphan</option>
+                                  <option>Hero</option>
+                                  <option>Caregiver</option>
+                                  <option>Explorer</option>
+                                  <option>Rebel</option>
+                                  <option>Lover</option>
+                                  <option>Creator</option>
+                                  <option>Jester</option>
+                                  <option>Sage</option>
+                                  <option>Magician</option>
+                                  <option>Ruler</option>
+                              </select>
                           </DIV>
                           
-                          
-                          <button type="submit" class="btn btn-primary">Next</button>
+                          <button type="submit" class="btn btn-primary">Save</button>
                           <!--{{ form.submit() }}-->    
                       </form>
                       
@@ -96,7 +107,8 @@
       </DIV>
       
       
-      </BODY>
+      
+   </BODY>
     
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -25,11 +25,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Current Story <span class="sr-only">(current)</span></a>
-                    </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Load Story</a>
+                        <a class="nav-link" href="#">Current Story</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Load Story<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Character Creation</a>
@@ -52,45 +52,9 @@
               
               <DIV class="row">
                   <DIV class="col-md-12" >
-                      <h2>Story Creation Page</h2>
-                  </DIV>
+                      <h2>Load Story</h2>
+                  </DIV>    
                   
-                  <DIV class="row">
-                      
-                      <form action="" method="post" novalidate>
-                          {{ form.hidden_tag() }}
-                          
-                          <DIV class="form-group align-items-center">
-                                  <!--<label class="sr-only" for="inlineFormInputName">{{ form.storyname.label }}</label>-->
-                                  
-                                  <label for="StorynameFormControlInput">Name your Story</label>
-                                  <input type="text" class="form-control" id="StorynameFormControlInput" placeholder="Name">
-                          </DIV>
-                          
-                          <DIV class="form-group align-items-center">
-                              <label for="PlotlineControlSelect">Choose a Plotline</label>
-                              <select class="form-control" id="PlotlineControlSelect">
-                                  <option>Overcoming the Monster</option>
-                                  <option>Rags to Riches</option>
-                                  <option>The Quest</option>
-                                  <option>Voyage and Return</option>
-                                  <option>Comedy</option>
-                                  <option>Tragedy</option>
-                                  <option>Rebirth</option>
-                              </select>
-                          </DIV>
-                          
-                          <DIV class="form-group align-items-center">
-                              <label for="CharacterFormControl">Create Character</label>
-                              <input class="CharacterFormControl" type="text" placeholder="No Character" readonly> 
-                          </DIV>
-                          
-                          
-                          <button type="submit" class="btn btn-primary">Next</button>
-                          <!--{{ form.submit() }}-->    
-                      </form>
-                      
-                  </DIV>
               </DIV>
           </DIV>
       </DIV>
