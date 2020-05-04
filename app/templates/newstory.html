@@ -42,7 +42,7 @@
         </nav>
 
 
-      <DIV class="container">
+      <DIV class="container-fluid">
           
           <DIV class="starter-template">
               <DIV class="jumbotron">
@@ -51,16 +51,18 @@
               </DIV>
               
               <DIV class="row">
-                  <DIV class="col-md-12" >
+                  <DIV class="col" >
                       <h2>Story Creation Page</h2>
                   </DIV>
+              </DIV>
                   
                   <DIV class="row">
                       
-                      <form action="" method="post" novalidate>
+                      <form action="story_paragraph" method="post" novalidate>
+                          
                           <DIV class="form-group align-items-center">
                           <label for="StorynameFormControlInput">Name your Story</label>
-                          <input type="text" class="form-control" id="StorynameFormControlInput" placeholder="Name">
+                          <input type="text" class="form-control" id="StorynameFormControlInput" placeholder="Name" value="" required>
                           </DIV>
                           
                           <DIV class="form-group align-items-center">
@@ -78,14 +80,13 @@
                           
                           <DIV class="form-group align-items-center">
                               <label for="CharacterFormControl">Create Character</label>
-                              <input class="CharacterFormControl" type="text" placeholder="No Character" readonly> 
+                              <input class="CharacterFormControl" type="text" placeholder="No Character" readonly required> 
                           </DIV>
                           
                           
                           <button type="submit" class="btn btn-primary">Next</button> 
                       </form>
                       
-                  </DIV>
               </DIV>
           </DIV>
       </DIV>
