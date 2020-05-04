@@ -1,30 +1,15 @@
-<HTML>
-    <HEAD>
-        <TITLE>Home Page -Draft</TITLE>
-    </HEAD>
-    <BODY>
-        <H1>Draft</H1>
-        
-        <!--Buttons-->
-        <button onclick="myFunction()">New Story</button>
-        
-        <div id="myDIV">
-            <H2>Name your Story</H2>
-        </div>
-        
-        <H3>Choose your plotline</H3>
-        <H3>Charcters</H3>
-        <H3>Roles</H3>
-    </BODY>
-</HTML>
-
-<SCRIPT>
-    function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
-</SCRIPT>
+<html>
+    <head>
+        {% if title %}
+        <title>{{ title }} - Microblog</title>
+        {% else %}
+        <title>Welcome to Microblog</title>
+        {% endif %}
+    </head>
+    <body>
+        <h1>Hi, {{ user.username }}!</h1>
+        {% for post in posts %}
+        <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
+        {% endfor %}
+    </body>
+</html>
