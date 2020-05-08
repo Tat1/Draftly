@@ -5,8 +5,49 @@
 My project currently called Draft is about providing a product or service that encourages gradual improvement for creative writing and freestyle. This in hope will inspire creativity and be an alternative interactive learning process that can be used. This pertains to writers or having an interest in writing.
 
 ---
+### How to run [NEW]
+Opted to build in Flask than Database method
 
-# Bare Bones of How it looks currently 
+In Terminal
+
+```
+cd  /DraftInteractive
+
+source venv/bin/activate 
+
+export FLASK_APP=app  
+
+flask run
+
+http://localhost:5000/
+```
+---
+### Appearance Currently
+
+* Home Page
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/StartupV1.png)
+
+* Load Story Page
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/LoadstoryV1.png)
+
+* New Story Page
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/NewstoryV1.png)
+
+* Character Creation Page
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/CharactercreateV1.png)
+
+* Story Paragraph Page
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/StoryparaV1.png)
+
+---
+### Current Sitemap
+
+![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/NewSiteMap2.jpg)
+
+
+---
+
+# Bare Bones of How it used to look like [OLD]
 
 file:///Users/tatidisu/Documents/GitHub/DraftInteractive/app/templates/index.html
 
