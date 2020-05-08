@@ -1,11 +1,25 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+#Using Jinja
 @app.route('/')
 def startup():
     return render_template('startup.html')
 
-@app.route('/about')
-def about():
-    return 'This is a url shortener'
+@app.route('/newstory')
+def newstory():
+    return render_template('newstory.html')
+
+@app.route('/storyparagraphs')
+def storyparagraphs():
+    return render_template('storyparagraphs.html', StorynameFormControlInput=request.args['StorynameFormControlInput'], PlotlineControlSelect=request.args['PlotlineControlSelect'])
+
+@app.route('/loadstory')
+def loadstory():
+    return render_template('loadstory.html')
+
+@app.route('/charactercreation')
+def charactercreation():
+    return render_template('charactercreation.html')
+

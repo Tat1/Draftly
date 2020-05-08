@@ -35,8 +35,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#">Character Creation</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Story Paragraphs</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Story Paragraphs<span class="sr-only">(current)</span></a>
                         </li>
                     </ul>
                 </div>
@@ -52,26 +52,59 @@
               <p class="lead"> Encouraging creative writing and freestyle.</p>
               </DIV>
               
-              <DIV class="row justify-content-around">
-                  <DIV class="col-4">
-                      <form action="newstory">
-                          <input type="submit" class="btn btn-secondary btn-lg" value="New Story">
-                          <!--<h2>New Story</h2>-->
-                          <!--<a class="btn btn-mybutton btn-lg" href="newstory.html" role="button">New Story</a>-->
-                      </form>
-                  </DIV>
-                  <DIV class="col-4">
-                      <form action="loadstory">
-                          <input type="submit" class="btn btn-secondary btn-lg" value="Load Story">
-                      <!--<h2>Load Story</h2>-->
-                      <!--<a class="btn btn-mybutton btn-lg" href="#" role="button">Load Story</a>-->
-                      </form>
+              <DIV class="row">
+                  <DIV class="col" >
+                      <h2>Story Paragraphs</h2>
                   </DIV>
               </DIV>
+              
+              <DIV class="row justify-content-center">
+              {{ StorynameFormControlInput }}
+              {{ PlotlineControlSelect }}</DIV>
+                  
+                  <DIV class="row justify-content-center">
+                      
+                      <form action="storyparagraphs" method="post">
+                          <!-- removed the novalidate-->
+                          
+                          <DIV class="form-group align-items-center">
+                          <label for="paragraphsFormControlTextarea1">Phase 1</label>
+                              <textarea class="form-control" id="paragraphsFormControlTextarea1" rows="3" required></textarea>
+                          </DIV>
+                          
+                          <DIV class="form-group align-items-center">
+                          <label for="paragraphsFormControlTextarea2">Phase 2</label>
+                              <textarea class="form-control" id="paragraphsFormControlTextarea2" rows="3" required></textarea>
+                          </DIV>
+                          
+                          <DIV class="form-group align-items-center">
+                          <label for="paragraphsFormControlTextarea3">Phase 3</label>
+                              <textarea class="form-control" id="paragraphsFormControlTextarea3" rows="3" required></textarea>
+                          </DIV>
+                          
+                          <DIV class="form-group align-items-center">
+                          <label for="paragraphsFormControlTextarea4">Phase 4</label>
+                              <textarea class="form-control" id="paragraphsFormControlTextarea4" rows="3" required></textarea>
+                          </DIV>
+                          
+                          <DIV class="form-group align-items-center">
+                          <label for="paragraphsFormControlTextarea5">Phase 5</label>
+                              <textarea class="form-control" id="paragraphsFormControlTextarea5" rows="3" required></textarea>
+                          </DIV>
+                          
+                          
+                          <DIV class="form-group align-items-center">
+                              <input type ="submit" class="btn btn-secondary btn-lg" value="Submit">
+                          </DIV>
+                          <!--<button type="submit" class="btn btn-primary">Next</button> -->
+                      </form>
+                      
+              </DIV>
           </DIV>
-        </DIV>
+      </DIV>
       
-  </BODY>
+      
+      </BODY>
     
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
