@@ -95,7 +95,7 @@
                       </form>
                   </DIV>
               </DIV>
-              
+
               <DIV class="col-auto">
                   <h3>Character</h3>
 
@@ -134,36 +134,32 @@
                               <option>Ruler</option>
                           </select>
                       </DIV>
-                          
+
                           <DIV class="form-group align-items-center">
                               <input type="submit" class="btn btn-primary" value="Create Character">
                           </DIV>
 
                       </form>
               </DIV>
-              
+
               <DIV class="col-auto">
                   <h3>List of Characters</h3>
                   <DIV class="form-group align-items-center">
                       {% for i in characters %}
-                      {% for j in roles %}
-                      {% for n in archetypes %}
                       <DIV class="row">
                           <DIV class="col">
-                          {{ i }}
+                          {{ i.name }}
                           </DIV>
                           <DIV class="col">
-                          {{ j }}
+                          {{ i.role }}
                           </DIV>
                           <DIV class="col">
-                          {{ n }}
+                          {{ i.arche }}
                           </DIV>
-                          
+
                       </DIV>
-                      {% endfor %} 
                       {% endfor %}
-                      {% endfor %}
-                      
+
                   </DIV>
                   </DIV>
                   </DIV>
