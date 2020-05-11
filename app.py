@@ -11,14 +11,14 @@ def startup():
 def newstory():
     if 'CharacternameFormControlInput' in request.args:
         # Got a character from a form...
-        return render_template('newstory.html', CharacternameFormControlInput=request.args['CharacternameFormControlInput'])
+        return render_template('newstory.html', CharacternameFormControlInput=request.form['CharacternameFormControlInput'])
     else:
         # No character yet
         return render_template('newstory.html')
 
 @app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
-    return render_template('storyparagraphs.html', StorynameFormControlInput=request.args['StorynameFormControlInput'], PlotlineControlSelect=request.args['PlotlineControlSelect'])
+    return render_template('storyparagraphs.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'])
 
 @app.route('/loadstory')
 def loadstory():
