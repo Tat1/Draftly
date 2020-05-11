@@ -52,19 +52,14 @@
               <p class="lead"> Encouraging creative writing and freestyle.</p>
               </DIV>
 
-              <DIV class="row">
-                  <DIV class="col" >
+              <DIV class="row justify-content-center">
                       <h2>Story Creation Page</h2>
-                  </DIV>
               </DIV>
 
-              {% for i in characters %}
-              <DIV CLASS="row">
-                {{ i }}
-              </DIV>
-              {% endfor %}
-
-                  <DIV class="row justify-content-center">
+              <DIV class="row justify-content-center">
+              <DIV class="col-auto">
+                  <h3>Story</h3>
+                  <DIV class="row">
 
                       <form action="storyparagraphs" method="post">
                           <!-- removed method="post" and the novalidate-->
@@ -98,19 +93,80 @@
                           </DIV>
                           <!--<button type="submit" class="btn btn-primary">Next</button> -->
                       </form>
+                  </DIV>
               </DIV>
+              
+              <DIV class="col-auto">
+                  <h3>Character</h3>
 
                       <form action="charactercreation" method="post">
                            <DIV class="form-group align-items-center">
-                              <label for="CharacterFormControl">Create Character</label>
+                              <label for="CharacterFormControl">Name your Character</label>
                               <input class="CharacterFormControl" type="text" name="CharacterFormControl" placeholder="No Character" required>
 
                           </DIV>
+                          <DIV class="form-group align-items-center">
+                          <label for="RoleControlSelect">Choose a Role</label>
+                          <select class="form-control" name="RoleControlSelect" required>
+                              <option>The Villain</option>
+                              <option>The Dispatcher</option>
+                              <option>The Helper</option>
+                              <option>The Love Interest</option>
+                              <option>The Donor</option>
+                              <option>The Hero</option>
+                              <option>The False Hero</option>
+                          </select>
+                      </DIV>
+                      <DIV class="form-group align-items-center">
+                          <label for="ArchetypeControlSelect">Choose an Archetype</label>
+                          <select class="form-control" name="ArchetypeControlSelect" required>
+                              <option>Innocent</option>
+                              <option>Orphan</option>
+                              <option>Hero</option>
+                              <option>Caregiver</option>
+                              <option>Explorer</option>
+                              <option>Rebel</option>
+                              <option>Lover</option>
+                              <option>Creator</option>
+                              <option>Jester</option>
+                              <option>Sage</option>
+                              <option>Magician</option>
+                              <option>Ruler</option>
+                          </select>
+                      </DIV>
+                          
                           <DIV class="form-group align-items-center">
                               <input type="submit" class="btn btn-primary" value="Create Character">
                           </DIV>
 
                       </form>
+              </DIV>
+              
+              <DIV class="col-auto">
+                  <h3>List of Characters</h3>
+                  <DIV class="form-group align-items-center">
+                      {% for i in characters %}
+                      {% for j in roles %}
+                      {% for n in archetypes %}
+                      <DIV class="row">
+                          <DIV class="col">
+                          {{ i }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ j }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ n }}
+                          </DIV>
+                          
+                      </DIV>
+                      {% endfor %} 
+                      {% endfor %}
+                      {% endfor %}
+                      
+                  </DIV>
+                  </DIV>
+                  </DIV>
 
               <!--
               <DIV class="row justify-content-center">

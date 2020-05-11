@@ -3,6 +3,8 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 theCharacters = []
+theRoles = []
+theArchetypes = []
 
 #Using Jinja
 @app.route('/',  methods = ['GET'])
@@ -11,7 +13,7 @@ def startup():
 
 @app.route('/newstory', methods = ['POST'])
 def newstory():
-    return render_template('newstory.html', characters=theCharacters)
+    return render_template('newstory.html', characters=theCharacters, roles=theRoles, archetypes=theArchetypes)
 
 @app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
@@ -25,5 +27,9 @@ def loadstory():
 def charactercreation():
     charName = request.form["CharacterFormControl"]
     theCharacters.append(charName)
+    roleName = request.form["RoleControlSelect"]
+    theRoles.append(roleName)
+    archetypeName = request.form["ArchetypeControlSelect"]
+    theArchetypes.append(archetypeName)
 
-    return render_template('newstory.html', characters=theCharacters)
+    return render_template('newstory.html', characters=theCharacters, roles=theRoles, archetypes=theArchetypes)
