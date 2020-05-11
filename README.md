@@ -10,10 +10,55 @@ Opted to build in Flask than Database method
 
 In Terminal
 
+Go to the Draft Interactive Directory
+
 ```
 cd  /DraftInteractive
+```
+
+Things you need to install include
+Install Homebrew
+```
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+Install either Pipenv
+```
+$ brew install pipenv
+```
+
+or Virtualenv
+```
+pip install virtualenv 
+```
+Install Python
+```
+$ brew install python
+
+$ python3
+
+# Do I have a Python 3 installed?
+$ python --version
+Python 3.7.1 # Success!
+```
+
+Install Flask
+```
+$ python3 -m venv venv
+
+or
+
+$ python2 -m virtualenv venv
 
 source venv/bin/activate 
+
+$ pip install Flask
+
+```
+
+
+Run the virtual environment
+```
 
 export FLASK_APP=app  
 
