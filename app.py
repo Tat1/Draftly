@@ -2,6 +2,8 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+theCharacters = []
+
 #Using Jinja
 @app.route('/',  methods = ['GET'])
 def startup():
@@ -9,12 +11,7 @@ def startup():
 
 @app.route('/newstory', methods = ['POST'])
 def newstory():
-    if 'CharacternameFormControlInput' in request.args:
-        # Got a character from a form...
-        return render_template('newstory.html', CharacternameFormControlInput=request.form['CharacternameFormControlInput'])
-    else:
-        # No character yet
-        return render_template('newstory.html')
+    return render_template('newstory.html', characters=theCharacters)
 
 @app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
@@ -24,6 +21,9 @@ def storyparagraphs():
 def loadstory():
     return render_template('loadstory.html')
 
-@app.route('/charactercreation')
+@app.route('/charactercreation', methods = ['POST'])
 def charactercreation():
-    return render_template('charactercreation.html')
+    charName = request.form["CharacterFormControl"]
+    theCharacters.append(charName)
+
+    return render_template('newstory.html', characters=theCharacters)
