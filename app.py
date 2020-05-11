@@ -9,7 +9,12 @@ def startup():
 
 @app.route('/newstory', methods = ['POST'])
 def newstory():
-    return render_template('newstory.html', CharacternameFormControlInput=request.args['CharacternameFormControlInput'])
+    if 'CharacternameFormControlInput' in request.args:
+        # Got a character from a form...
+        return render_template('newstory.html', CharacternameFormControlInput=request.args['CharacternameFormControlInput'])
+    else:
+        # No character yet
+        return render_template('newstory.html')
 
 @app.route('/storyparagraphs')
 def storyparagraphs():
@@ -22,4 +27,3 @@ def loadstory():
 @app.route('/charactercreation')
 def charactercreation():
     return render_template('charactercreation.html')
-
