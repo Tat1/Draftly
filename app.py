@@ -3,13 +3,13 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 #Using Jinja
-@app.route('/')
+@app.route('/',  methods = ['GET'])
 def startup():
     return render_template('startup.html')
 
-@app.route('/newstory')
+@app.route('/newstory', methods = ['POST'])
 def newstory():
-    return render_template('newstory.html')
+    return render_template('newstory.html', CharacternameFormControlInput=request.args['CharacternameFormControlInput'])
 
 @app.route('/storyparagraphs')
 def storyparagraphs():
