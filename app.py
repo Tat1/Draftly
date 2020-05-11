@@ -9,7 +9,10 @@ def startup():
 
 @app.route('/newstory', methods = ['POST'])
 def newstory():
-    return render_template('newstory.html', CharacternameFormControlInput=request.args['CharacternameFormControlInput'])
+    if 'CharacternameFormControlInput' in request.args:
+        return render_template('newstory.html', CharacternameFormControlInput=request.args['CharacternameFormControlInput'])
+    else:
+        return render_template('newstory.html')
 
 @app.route('/storyparagraphs')
 def storyparagraphs():
