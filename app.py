@@ -14,7 +14,7 @@ def newstory():
     else:
         return render_template('newstory.html')
 
-@app.route('/storyparagraphs')
+@app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
     return render_template('storyparagraphs.html', StorynameFormControlInput=request.args['StorynameFormControlInput'], PlotlineControlSelect=request.args['PlotlineControlSelect'])
 

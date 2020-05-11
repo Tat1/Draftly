@@ -63,29 +63,29 @@
                       <form action="storyparagraphs" method="post">
                           <!-- removed method="post" and the novalidate-->
                           
-                          <DIV class="form-group align-items-center">
-                          <label for="StorynameFormControlInput">Name your Story</label>
-                          <input type="text" class="form-control" name="StorynameFormControlInput" placeholder="Name" value="" required>
+                          <DIV class="form-inline align-items-center">
+                              <DIV class="form-group mb-2">
+                              
+                                  <label for="StorynameFormControlInput">Name your Story</label>
+                                  <input type="text" class="form-control" name="StorynameFormControlInput" placeholder="Name" value="" required>
+                              </DIV>
                           </DIV>
                           
-                          <DIV class="form-group align-items-center">
-                              <label for="PlotlineControlSelect">Choose a Plotline</label>
-                              <select class="form-control" name="PlotlineControlSelect" required>
-                                  <option>Overcoming the Monster</option>
-                                  <option>Rags to Riches</option>
-                                  <option>The Quest</option>
-                                  <option>Voyage and Return</option>
-                                  <option>Comedy</option>
-                                  <option>Tragedy</option>
-                                  <option>Rebirth</option>
-                              </select>
+                          <DIV class="form-inline align-items-center">
+                              <DIV class="form-group mb-2">
+                                  <label for="PlotlineControlSelect">Choose a Plotline</label>
+                                  <select class="form-control" name="PlotlineControlSelect" required>
+                                      <option>Overcoming the Monster</option>
+                                      <option>Rags to Riches</option>
+                                      <option>The Quest</option>
+                                      <option>Voyage and Return</option>
+                                      <option>Comedy</option>
+                                      <option>Tragedy</option>
+                                      <option>Rebirth</option>
+                                  </select>
+                              </DIV>
                           </DIV>
-                          
-                          <DIV class="form-group align-items-center">
-                              <label for="CharacterFormControl">Create Character</label>
-                              <input class="CharacterFormControl" type="text" name="CharacterFormControl" placeholder="No Character" readonly required>   
-                                
-                          </DIV>
+              
                           
                           <DIV class="form-group align-items-center">
                               <input type ="submit" class="btn btn-secondary btn-lg" value="Submit">
@@ -93,11 +93,19 @@
                           <!--<button type="submit" class="btn btn-primary">Next</button> -->
                       </form>
               </DIV>
-              <DIV class="form-group align-items-end">
-                  <form action="charactercreation">
-                      <input type="submit" class="btn btn-primary" value="Create Character">
-                  </form>
-              </DIV>
+                      
+                      <form action="charactercreation" method="post">
+                           <DIV class="form-group align-items-center">
+                              <label for="CharacterFormControl">Create Character</label>
+                              <input class="CharacterFormControl" type="text" name="CharacterFormControl" placeholder="No Character" readonly required>   
+                                
+                          </DIV>
+                          <DIV class="form-group align-items-center">
+                              <input type="submit" class="btn btn-primary" value="Create Character">
+                          </DIV>
+                      
+                      </form>
+              
               <!--
               <DIV class="row justify-content-center">
                   <H4> 
