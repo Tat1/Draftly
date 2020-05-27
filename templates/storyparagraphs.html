@@ -100,67 +100,30 @@
                   </DIV>
                   </DIV>
                       
+                              
                       <DIV class="col-auto">
                   <h3>Phases</h3>
                   <DIV class="form-group align-items-center">
-                      {% for i in overcoming %}
+                      {% for i in phasesForStory %}
                       <DIV class="row">
                           <DIV class="col">
-                          {{ i.anticipation }}
+                              <DIV class="form-group align-items-center">
+                          <label for="paragraphsFormControlTextarea1">Phase
+                                  {{i}}</label>
+                              <textarea class="form-control" id="paragraphsFormControlTextarea1" rows="3" required></textarea>
                           </DIV>
-                          <DIV class="col">
-                          {{ i.dream }}
-                          </DIV>
-                          <DIV class="col">
-                          {{ i.frustration }}
-                          </DIV>
-                          <DIV class="col">
-                          {{ i.nightmare }}
-                          </DIV>
-                          <DIV class="col">
-                          {{ i.miraculous escape }}
                           </DIV>
 
                       </DIV>
                       {% endfor %}
-
-                  </DIV>
-                  </DIV>
-                      
-                      <form action="storyparagraphs" method="post">
-                          <!-- removed the novalidate-->
-                          
-                          <DIV class="form-group align-items-center">
-                          <label for="paragraphsFormControlTextarea1">Phase 1</label>
-                              <textarea class="form-control" id="paragraphsFormControlTextarea1" rows="3" required></textarea>
-                          </DIV>
-                          
-                          <DIV class="form-group align-items-center">
-                          <label for="paragraphsFormControlTextarea2">Phase 2</label>
-                              <textarea class="form-control" id="paragraphsFormControlTextarea2" rows="3" required></textarea>
-                          </DIV>
-                          
-                          <DIV class="form-group align-items-center">
-                          <label for="paragraphsFormControlTextarea3">Phase 3</label>
-                              <textarea class="form-control" id="paragraphsFormControlTextarea3" rows="3" required></textarea>
-                          </DIV>
-                          
-                          <DIV class="form-group align-items-center">
-                          <label for="paragraphsFormControlTextarea4">Phase 4</label>
-                              <textarea class="form-control" id="paragraphsFormControlTextarea4" rows="3" required></textarea>
-                          </DIV>
-                          
-                          <DIV class="form-group align-items-center">
-                          <label for="paragraphsFormControlTextarea5">Phase 5</label>
-                              <textarea class="form-control" id="paragraphsFormControlTextarea5" rows="3" required></textarea>
-                          </DIV>
-                          
-                          
-                          <DIV class="form-group align-items-center">
+                      <DIV class="form-group align-items-center">
                               <input type ="submit" class="btn btn-secondary btn-lg" value="Submit">
                           </DIV>
                           <!--<button type="submit" class="btn btn-primary">Next</button> -->
-                      </form>
+                  </DIV>
+                  </DIV>
+                      
+ 
                       
               </DIV>
           </DIV>

@@ -3,7 +3,17 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 theCharacters = []
-theOvercoming = []
+
+# STORIES = ['OvercomingTheMonster', 'RagsToRiches', 'Quest', 'VoyageAndReturn', 'Comedy', 'Tradegy','Rebirth' ]
+storyPlotlineToPhase = {
+    'Overcoming_The_Monster' : ['Anticipation', 'Dream', 'Frustration', 'Nightmare', 'Miraculous_Escape'],
+    'Rags_To_Riches' : ['Initial_Wretchedness_then_Call_to_Action', 'Getting_out_into_the_World', 'Central_Crisis', 'Independence_and_Ordeal', 'Fulfillment'],
+    'Quest' : ['The Call', 'The Journey', 'Arrival_and_Frustration', 'Final_Ordeal', 'The Goal'],
+    'Voyage_and_Return' : ['Anticipation_Stage_and_Fall_into_Another_World','Initial_Fascination_or_Dream_Stage','Frustration','Nightmare','Thrilling_Escape_and_Return' ],
+    'Comedy' : ['Establish_the_Status_Quo','Confusion_and_Isolation','Raise_the_Stakes','Problems_Solved'],
+    'Tragedy' : ['Hero_is_Tempted', 'Pursue_Dream','Setback','Spiralling_out_of_control','Decision_and_Consequence' ],
+    'Rebirth' : ['Spell_of_Darkness', 'New_Status_Quo', 'Threat_and_Agony', 'Agony_Continues', 'Redemption'] 
+    }
 
 #Using Jinja
 @app.route('/',  methods = ['GET'])
@@ -12,24 +22,18 @@ def startup():
 
 @app.route('/newstory', methods = ['POST'])
 def newstory():
-    AnticipationName = request.form["PlotlineControlSelect"]
-    DreamName = request.form["PlotlineControlSelect"]
-    FrustrationName = request.form["PlotlineControlSelect"]
-    NightmareName = request.form["PlotlineControlSelect"]
-    MiraculousEscapeName = request.form["PlotlineControlSelect"]
-        # Store as a Python dictionary:
-    theOvercoming.append({'anticipation' : AnticipationName,
-                          'dream' : DreamName,
-                          'frustration' : FrustrationName,
-                          'nightmare' : NightmareName,
-                          'miraculous escape' : MiraculousEscapeName,
-                         })
 
-    return render_template('newstory.html', characters=theCharacters, overcoming=theOvercoming)
+    return render_template('newstory.html', characters=theCharacters)
 
 @app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
-    return render_template('storyparagraphs.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'], characters=theCharacters, overcoming=theOvercoming)
+
+    storyPlotline = request.form["PlotlineControlSelect"]
+    
+    phasesForStory = storyPlotlineToPhase[storyPlotline]
+
+    
+    return render_template('storyparagraphs.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'], characters=theCharacters, phasesForStory=phasesForStory)
 
 
 @app.route('/loadstory')
