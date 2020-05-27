@@ -89,6 +89,103 @@ http://localhost:5000/
 
 ![screen grab](https://github.com/Tat1/DraftInteractive/blob/master/screenshots/NewSiteMap2.jpg)
 
+---
+
+### Whats on Each Page
+
+#### startup Page : http://localhost:5000/
+Template: startup.html
+
+Method: GET
+
+* Button -> newstory.html -> (POST)
+* Button -> loadstory.html -> (POST)
+
+NOTE: 
+* Contains Button to link to New Story Page
+* Contains Button to link to Load Story Page
+
+
+#### newstory Page : http://localhost:5000/newstory
+Template: newstory.html
+
+Method: POST
+
+* Form Action -> charactercreation
+
+  1)StorynameFormControlInput (Story Name)
+  
+  2)PlotlineControlSelect (Story Plotline)
+  
+* Button -> charactercreation -> (POST)
+
+NOTE: 
+* Contains Story Name
+* Conatins Story Plotlines
+* Story Plotlines (Dict. storyPlotlineToPhase) have Phases (Append. phasesForStory)
+* Conatins Button to link to the Character creation Page
+
+#### charactercreation Page : http://localhost:5000/charactercreation
+Template : charactercreation.html
+
+Method : POST
+
+* Form Action -> storyparagraphs
+  
+  1)CharacterFormControl (Character Name)
+  
+  2)RoleControlSelect (Character Role)
+  
+  3)ArchetypeControlSelect (Character Archetype)
+  
+* Button -> Create Character -> (VALUE)
+* Button -> storyparagraphs -> (POST)
+* List of Characters (Append. theCharacters)
+
+  1)Name
+  
+  2)Role
+  
+  3)Arche 
+
+NOTE:
+* Contains Character Name
+* Contains Character Role
+* Contains Character Archetype
+* Contains List of Character table with Name, Role and Archetype of all characters created
+* Contains Button to create the character
+* Contains Button to link to the Story Paragraph Page
+
+#### storyparagraphs Page : http://localhost:5000/storyparagraphs
+Template : storyparagraphs.html
+
+Method : POST
+
+* Badge -> StorynameFormControlInput (Story Name)
+* Badge -> PlotlineControlSelect (Story Plotline)
+* Badge -> List of Characters (Append. theCharacters)
+* Phases (Append. phasesForStory) from (Dict. storyPlotlineToPhase)
+
+  1)Phase Label
+  
+  2)paragraphsFormControlTextarea (Story Paragraph Text Area)
+  
+* Button -> Saves Story Paragraph, Moves to Next Story Phase -> (VALUE)
+
+NOTE:
+* Contains Story Name Label
+* Contains Story Plotline Label
+* Contains List of Character Table Label
+* Conatins Phases and Paragraphs
+* Contains Button for making the paragraphs fixed and moving to the next Story Phase
+
+#### loadstory Page : http://localhost:5000/loadstory
+Template : loadstory.html
+
+Method : POST
+
+NOTE:
+* Future Development or Update for Selecting Multiple Story Works
 
 ---
 
