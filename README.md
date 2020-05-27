@@ -170,7 +170,7 @@ Method : POST
   
   2)paragraphsFormControlTextarea (Story Paragraph Text Area)
   
-* Button -> Saves Story Paragraph, Moves to Next Story Phase -> (VALUE)
+* Button -> Saves Fixed Story Paragraph, Moves to Next Story Phase -> (VALUE)
 
 NOTE:
 * Contains Story Name Label
