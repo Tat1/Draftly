@@ -60,12 +60,13 @@
               
               <DIV class="row justify-content-center">
                   
-                  <form action="newstory">
-                      <DIV class="form-group align-items-center">
-                          <label for="CharacternameFormControlInput">Name your Character</label>
-                          <input type="text" class="form-control" name="CharacternameFormControlInput" placeholder="Name" value="" required>
-                      </DIV>
-                      <DIV class="form-group align-items-center">
+                  <form action="storyparagraphs" method="post">
+                           <DIV class="form-group align-items-center">
+                              <label for="CharacterFormControl">Name your Character</label>
+                              <input class="CharacterFormControl" type="text" name="CharacterFormControl" placeholder="No Character" required>
+
+                          </DIV>
+                          <DIV class="form-group align-items-center">
                           <label for="RoleControlSelect">Choose a Role</label>
                           <select class="form-control" name="RoleControlSelect" required>
                               <option>The Villain</option>
@@ -94,11 +95,39 @@
                               <option>Ruler</option>
                           </select>
                       </DIV>
+
+                          <DIV class="form-group align-items-center">
+                              <input type="submit" class="btn btn-primary" value="Create Character">
+                          </DIV>
                       
                       <DIV class="form-group align-items-center">
-                              <input type ="submit" class="btn btn-secondary btn-lg" value="Save">
+                              <input type ="submit" class="btn btn-secondary btn-lg" value="Submit">
                           </DIV>
-                  </form>
+
+                      </form>
+                  
+                  <DIV class="col-auto">
+                  <h3>List of Characters</h3>
+                  <DIV class="form-group align-items-center">
+                      {% for i in characters %}
+                      <DIV class="row">
+                          <DIV class="col">
+                          {{ i.name }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ i.role }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ i.arche }}
+                          </DIV>
+
+                      </DIV>
+                      {% endfor %}
+
+                  </DIV>
+                  </DIV>
+                  
+
               </DIV>
           </DIV>
         </DIV>

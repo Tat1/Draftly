@@ -61,7 +61,7 @@
                   <h3>Story</h3>
                   <DIV class="row">
 
-                      <form action="storyparagraphs" method="post">
+                      <form action="charactercreation" method="post">
                           <!-- removed method="post" and the novalidate-->
 
                           <DIV class="form-inline align-items-center">
@@ -96,72 +96,6 @@
                   </DIV>
               </DIV>
 
-              <DIV class="col-auto">
-                  <h3>Character</h3>
-
-                      <form action="charactercreation" method="post">
-                           <DIV class="form-group align-items-center">
-                              <label for="CharacterFormControl">Name your Character</label>
-                              <input class="CharacterFormControl" type="text" name="CharacterFormControl" placeholder="No Character" required>
-
-                          </DIV>
-                          <DIV class="form-group align-items-center">
-                          <label for="RoleControlSelect">Choose a Role</label>
-                          <select class="form-control" name="RoleControlSelect" required>
-                              <option>The Villain</option>
-                              <option>The Dispatcher</option>
-                              <option>The Helper</option>
-                              <option>The Love Interest</option>
-                              <option>The Donor</option>
-                              <option>The Hero</option>
-                              <option>The False Hero</option>
-                          </select>
-                      </DIV>
-                      <DIV class="form-group align-items-center">
-                          <label for="ArchetypeControlSelect">Choose an Archetype</label>
-                          <select class="form-control" name="ArchetypeControlSelect" required>
-                              <option>Innocent</option>
-                              <option>Orphan</option>
-                              <option>Hero</option>
-                              <option>Caregiver</option>
-                              <option>Explorer</option>
-                              <option>Rebel</option>
-                              <option>Lover</option>
-                              <option>Creator</option>
-                              <option>Jester</option>
-                              <option>Sage</option>
-                              <option>Magician</option>
-                              <option>Ruler</option>
-                          </select>
-                      </DIV>
-
-                          <DIV class="form-group align-items-center">
-                              <input type="submit" class="btn btn-primary" value="Create Character">
-                          </DIV>
-
-                      </form>
-              </DIV>
-
-              <DIV class="col-auto">
-                  <h3>List of Characters</h3>
-                  <DIV class="form-group align-items-center">
-                      {% for i in characters %}
-                      <DIV class="row">
-                          <DIV class="col">
-                          {{ i.name }}
-                          </DIV>
-                          <DIV class="col">
-                          {{ i.role }}
-                          </DIV>
-                          <DIV class="col">
-                          {{ i.arche }}
-                          </DIV>
-
-                      </DIV>
-                      {% endfor %}
-
-                  </DIV>
-                  </DIV>
                   </DIV>
 
               <!--

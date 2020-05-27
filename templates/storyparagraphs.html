@@ -73,32 +73,27 @@
               <DIV class="row justify-content-center">
                   <H4> 
                       <span class="badge badge-secondary">Characters:
-                          </span>
+                           <h3>List of Characters</h3>
+                          <DIV class="form-group align-items-center">
+                              {% for i in characters %}
+                              <DIV class="row">
+                                  <DIV class="col">
+                                      {{ i.name }}
+                                  </DIV>
+                                  <DIV class="col">
+                                      {{ i.role }}
+                                  </DIV>
+                                  <DIV class="col">
+                                      {{ i.arche }}
+                                  </DIV>
+                              </DIV>
+                              {% endfor %}
+                          </DIV>
+                      </span>
                   </H4>
               </DIV>
                   
                   <DIV class="row justify-content-center">
-                      
-                      <DIV class="col-auto">
-                  <h3>List of Characters</h3>
-                  <DIV class="form-group align-items-center">
-                      {% for i in characters %}
-                      <DIV class="row">
-                          <DIV class="col">
-                          {{ i.name }}
-                          </DIV>
-                          <DIV class="col">
-                          {{ i.role }}
-                          </DIV>
-                          <DIV class="col">
-                          {{ i.arche }}
-                          </DIV>
-
-                      </DIV>
-                      {% endfor %}
-
-                  </DIV>
-                  </DIV>
                       
                               
                       <DIV class="col-auto">

@@ -3,6 +3,8 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 theCharacters = []
+phasesForStory = None 
+
 
 # STORIES = ['OvercomingTheMonster', 'RagsToRiches', 'Quest', 'VoyageAndReturn', 'Comedy', 'Tradegy','Rebirth' ]
 storyPlotlineToPhase = {
@@ -23,35 +25,37 @@ def startup():
 @app.route('/newstory', methods = ['POST'])
 def newstory():
 
-    return render_template('newstory.html', characters=theCharacters)
+    return render_template('newstory.html')
 
 @app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
-
-    storyPlotline = request.form["PlotlineControlSelect"]
-    
-    phasesForStory = storyPlotlineToPhase[storyPlotline]
+    global phasesForStory
 
     
-    return render_template('storyparagraphs.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'], characters=theCharacters, phasesForStory=phasesForStory)
+    return render_template('storyparagraphs.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'], CharacterFormControl=request.form['CharacterFormControl'], characters=theCharacters, phasesForStory=phasesForStory)
 
 
-@app.route('/loadstory')
+@app.route('/loadstory', methods = ['POST'])
 def loadstory():
     return render_template('loadstory.html')
 
 @app.route('/charactercreation', methods = ['POST'])
 def charactercreation():
-    charName = request.form["CharacterFormControl"]
-    roleName = request.form["RoleControlSelect"]
-    archetypeName = request.form["ArchetypeControlSelect"]
+    global phasesForStory
+    storyPlotline = request.form.get('PlotlineControlSelect')
+    
+    phasesForStory = storyPlotlineToPhase[storyPlotline]
+    
+    charName = request.form.get('CharacterFormControl')
+    roleName = request.form.get('RoleControlSelect')
+    archetypeName = request.form.get('ArchetypeControlSelect')
 
     # Store as a Python dictionary:
     theCharacters.append({'name' : charName,
                           'role' : roleName,
                           'arche' : archetypeName})
 
-    return render_template('newstory.html', characters=theCharacters)
+    return render_template('charactercreation.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'], characters=theCharacters, phasesForStory=phasesForStory)
 
 
 #1 Overcoming The Monster
