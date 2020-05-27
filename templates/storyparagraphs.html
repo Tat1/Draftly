@@ -79,6 +79,54 @@
                   
                   <DIV class="row justify-content-center">
                       
+                      <DIV class="col-auto">
+                  <h3>List of Characters</h3>
+                  <DIV class="form-group align-items-center">
+                      {% for i in characters %}
+                      <DIV class="row">
+                          <DIV class="col">
+                          {{ i.name }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ i.role }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ i.arche }}
+                          </DIV>
+
+                      </DIV>
+                      {% endfor %}
+
+                  </DIV>
+                  </DIV>
+                      
+                      <DIV class="col-auto">
+                  <h3>Phases</h3>
+                  <DIV class="form-group align-items-center">
+                      {% for i in overcoming %}
+                      <DIV class="row">
+                          <DIV class="col">
+                          {{ i.anticipation }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ i.dream }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ i.frustration }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ i.nightmare }}
+                          </DIV>
+                          <DIV class="col">
+                          {{ i.miraculous escape }}
+                          </DIV>
+
+                      </DIV>
+                      {% endfor %}
+
+                  </DIV>
+                  </DIV>
+                      
                       <form action="storyparagraphs" method="post">
                           <!-- removed the novalidate-->
                           
