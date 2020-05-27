@@ -2,7 +2,7 @@
 
 ### Interactive Storytelling
 
-My project currently called Draft is about providing a product or service that encourages gradual improvement for creative writing and freestyle. This in hope will inspire creativity and be an alternative interactive learning process that can be used. This pertains to writers or having an interest in writing.
+My project currently called Draft is about providing a product or service which will be an Interactive Website that encourages gradual improvement for creative writing and freestyle. This in hope will inspire creativity and be an alternative interactive learning process that can be used. This pertains to writers or having an interest in writing.
 
 ---
 ### How to run [NEW]
