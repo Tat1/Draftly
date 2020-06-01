@@ -111,24 +111,42 @@ Template: newstory.html
 
 Method: POST
 
+##### INCOMING FIELDS
+
+* (none)
+
+##### PAGE FORM
+
 * Form Action -> charactercreation
 
   1)StorynameFormControlInput (Story Name)
-  
   2)PlotlineControlSelect (Story Plotline)
-  
 * Button -> charactercreation -> (POST)
 
 NOTE: 
 * Contains Story Name
 * Conatins Story Plotlines
 * Story Plotlines (Dict. storyPlotlineToPhase) have Phases (Append. phasesForStory)
-* Conatins Button to link to the Character creation Page
+* Contains Button to link to the Character creation Page
 
 #### charactercreation Page : http://localhost:5000/charactercreation
 Template : charactercreation.html
 
 Method : POST
+
+##### INCOMING FIELDS (to the handler)
+
+* First time into the page/handler from newstory:
+
+- Story name
+- Story plotline
+
+* Subsequent times into the page/handler from itself! (charactercreation)
+
+- ???
+- ???
+
+##### PAGE FORM
 
 * Form Action -> storyparagraphs
   
