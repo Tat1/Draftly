@@ -2,8 +2,12 @@ from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+# Keep a hold of the stort name and plot type!!!!
+
+
+
 theCharacters = []
-phasesForStory = None 
+phasesForStory = None
 
 
 # STORIES = ['OvercomingTheMonster', 'RagsToRiches', 'Quest', 'VoyageAndReturn', 'Comedy', 'Tradegy','Rebirth' ]
@@ -14,7 +18,7 @@ storyPlotlineToPhase = {
     'Voyage_and_Return' : ['Anticipation_Stage_and_Fall_into_Another_World','Initial_Fascination_or_Dream_Stage','Frustration','Nightmare','Thrilling_Escape_and_Return' ],
     'Comedy' : ['Establish_the_Status_Quo','Confusion_and_Isolation','Raise_the_Stakes','Problems_Solved'],
     'Tragedy' : ['Hero_is_Tempted', 'Pursue_Dream','Setback','Spiralling_out_of_control','Decision_and_Consequence' ],
-    'Rebirth' : ['Spell_of_Darkness', 'New_Status_Quo', 'Threat_and_Agony', 'Agony_Continues', 'Redemption'] 
+    'Rebirth' : ['Spell_of_Darkness', 'New_Status_Quo', 'Threat_and_Agony', 'Agony_Continues', 'Redemption']
     }
 
 #Using Jinja
@@ -31,7 +35,7 @@ def newstory():
 def storyparagraphs():
     global phasesForStory
 
-    
+
     return render_template('storyparagraphs.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'], CharacterFormControl=request.form['CharacterFormControl'], characters=theCharacters, phasesForStory=phasesForStory)
 
 
@@ -42,18 +46,22 @@ def loadstory():
 @app.route('/charactercreation', methods = ['POST'])
 def charactercreation():
     global phasesForStory
-    storyPlotline = request.form.get('PlotlineControlSelect')
-    
-    phasesForStory = storyPlotlineToPhase[storyPlotline]
-    
-    charName = request.form.get('CharacterFormControl')
-    roleName = request.form.get('RoleControlSelect')
-    archetypeName = request.form.get('ArchetypeControlSelect')
+
+    # Comes in on first access:
+    if 'PlotlineControlSelect' in request.form:
+        storyPlotline = request.form.get('PlotlineControlSelect')
+        phasesForStory = storyPlotlineToPhase[storyPlotline]
+        # And continue
+    else:
+        charName = request.form.get('CharacterFormControl')
+        roleName = request.form.get('RoleControlSelect')
+        archetypeName = request.form.get('ArchetypeControlSelect')
+
+        theCharacters.append({'name' : charName,
+                              'role' : roleName,
+                              'arche' : archetypeName})
 
     # Store as a Python dictionary:
-    theCharacters.append({'name' : charName,
-                          'role' : roleName,
-                          'arche' : archetypeName})
 
     return render_template('charactercreation.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'], characters=theCharacters, phasesForStory=phasesForStory)
 
@@ -108,4 +116,3 @@ def charactercreation():
 #ed_user = Phase(name='The threat returns or strengthens, and the charcter is stuck in a seemingly inescapable state of agony')
 #ed_user = Phase(name='The agony continues, with no end in sight')
 #ed_user = Phase(name='There is a final act of redemption')
-
