@@ -8,7 +8,7 @@ storyName = None
 storyPlotline = None
 PlotlineControlSelect = None
 
-
+thePhases = []
 theCharacters = []
 phasesForStory = None
 
@@ -37,6 +37,13 @@ def newstory():
 @app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
     global phasesForStory, storyName, storyPlotline, PlotlineControlSelect
+    
+    phaseName = storyPlotlineToPhase[storyPlotline]
+    textName = paragraphsFormControlTextarea1
+    #paragraphsFormControlTextarea1
+    
+    thePhases.append({'phase' : phaseName,
+                      'text' : textName})
 
 
     return render_template('storyparagraphs.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
