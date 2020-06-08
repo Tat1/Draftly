@@ -18,6 +18,7 @@
     </HEAD>
       
     <BODY>
+        <!-- Navigation -->
         <DIV class="row justify-content-center">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Draft</a>
@@ -42,90 +43,93 @@
                 </div>
             </nav>
         </DIV>
+        <!-- Navigation -->
 
 
-      <DIV class="container-fluid">
+        <DIV class="container-fluid">
           
-          <DIV class="starter-template">
-              <DIV class="jumbotron">
-              <h1>Draft</h1>
-              <p class="lead"> Encouraging creative writing and freestyle.</p>
-              </DIV>
+            <DIV class="starter-template">
+                <!-- Strapline-->
+                <DIV class="jumbotron">
+                    <h1>Draft</h1>
+                    <p class="lead"> Choose your creative framework. </p>
+                </DIV>
+                <!-- Strapline -->
               
-              <!-- New Section Start -->
+                <!-- New Section Start -->
+                <DIV class="row">
+                    <DIV class="col" >
+                        <h2>Start writing your story</h2>
+                    </DIV>
+                </DIV>
               
-              <DIV class="row">
-                  <DIV class="col" >
-                      <h2>Start writing your story</h2>
-                  </DIV>
-              </DIV>
-              
-              <DIV class="row justify-content-center">
-                  <H4> 
-                      <span class="badge badge-secondary">Story Name:
+                <DIV class="row justify-content-center">
+                    <h4> 
+                        <span class="badge badge-secondary">Story Name:
                       {{ storyName }} </span>
-                  </H4>
-              </DIV>
-              <DIV class="row justify-content-center">
-                  <H4> 
-                      <span class="badge badge-secondary">Chosen Plotline:
+                    </h4>
+                </DIV>
+                <DIV class="row justify-content-center">
+                    <h4> 
+                        <span class="badge badge-secondary">Chosen Plotline:
                           {{ storyPlotline }}</span>
-                  </H4>
-              </DIV>
-              <DIV class="row justify-content-center">
-                  <H4> 
-                      <span class="badge badge-secondary">
-                           <h3>List of Characters</h3>
-                          <DIV class="form-group align-items-center">
-                              {% for i in characters %}
-                              <DIV class="row">
-                                  <DIV class="col">
-                                      {{ i.name }}
-                                  </DIV>
-                                  <DIV class="col">
-                                      {{ i.role }}
-                                  </DIV>
-                                  <DIV class="col">
-                                      {{ i.arche }}
-                                  </DIV>
-                              </DIV>
-                              {% endfor %}
-                          </DIV>
-                      </span>
-                  </H4>
-              </DIV>
+                    </h4>
+                </DIV>
+                <DIV class="row justify-content-center">
+                    <h4> 
+                        <span class="badge badge-secondary">
+                            <h3>List of Characters</h3>
+                            <DIV class="form-group align-items-center">
+                                {% for i in characters %}
+                                <DIV class="row">
+                                    <DIV class="col">
+                                        {{ i.name }}
+                                    </DIV>
+                                    <DIV class="col">
+                                        {{ i.role }}
+                                    </DIV>
+                                    <DIV class="col">
+                                        {{ i.arche }}
+                                    </DIV>
+                                </DIV>
+                                {% endfor %}
+                            </DIV>
+                        </span>
+                    </h4>
+                </DIV>
                   
-                  <DIV class="row justify-content-center">
-                      <form action="storyparagraphs" method="post">
-                          <DIV class="col-auto">
-                              <h3>Phases</h3>
-                              <DIV class="form-group align-items-center">
-                                  {% for i in phasesForStory %}
-                                  <DIV class="row">
-                                      <DIV class="col">
-                                          <DIV class="form-group align-items-center">
-                                              <label for="paragraphsFormControlTextarea1">
-                                                  {{i}}</label>
-                                              <textarea class="form-control" id="paragraphsFormControlTextarea1" rows="3" required></textarea>
-                                          </DIV>
-                                      </DIV>
-                                  </DIV>
-                                  {% endfor %}
-                                  <!--<DIV class="form-group align-items-center">
-                                      <input type ="submit" class="btn btn-secondary btn-lg" value="Submit">
-                                  </DIV> -->
-                                  <input type="submit" class="btn btn-primary" value="Continue">
-                              </DIV>
-                          </DIV>
-                      </form>     
-              </DIV>
-              
-              <!-- New Section End -->
-          </DIV>
-      </DIV>
-      
-      
-      </BODY>
+                <DIV class="row justify-content-center">
+                    <form action="storyparagraphs" method="post">
+                        <DIV class="col-auto">
+                            <h3>Phases</h3>
+                            <DIV class="form-group align-items-center">
+                                {% for i in phasesForStory %}
+                                <DIV class="row">
+                                    <DIV class="col">
+                                        <DIV class="form-group align-items-center">
+                                            <label for="paragraphsFormControlTextarea1">
+                                                {{i}}</label>
+                                            <textarea class="form-control" id="paragraphsFormControlTextarea1" rows="3" required></textarea>
+                                        </DIV>
+                                    </DIV>
+                                </DIV>
+                                {% endfor %}
+                                
+                                <!--
+                                <DIV class="form-group align-items-center">
+                                    <input type ="submit" class="btn btn-secondary btn-lg" value="Submit">
+                                </DIV> 
+                                -->
+                                
+                                <input type="submit" class="btn btn-primary" value="Continue">
+                            </DIV>
+                        </DIV>
+                    </form>     
+                </DIV>
+                <!-- New Section End -->
+            </DIV>
+        </DIV> 
+    </BODY>
     
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->

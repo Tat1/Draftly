@@ -18,6 +18,7 @@
     </HEAD>
 
     <BODY>
+        <!-- Navigation -->
         <DIV class="row justify-content-center">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Draft</a>
@@ -42,79 +43,77 @@
                 </div>
             </nav>
         </DIV>
+        <!-- Navigation -->
 
 
-      <DIV class="container-fluid">
-
-          <DIV class="starter-template">
-              <DIV class="jumbotron">
-              <h1>Draft</h1>
-              <p class="lead"> Encouraging creative writing and freestyle.</p>
-              </DIV>
+        <DIV class="container-fluid">
+            <DIV class="starter-template">
+                
+                <!-- Strapline -->
+                <DIV class="jumbotron">
+                    <h1>Draft</h1>
+                    <p class="lead"> Choose your creative framework. </p>
+                </DIV>
+                <!-- Strapline -->
               
               <!-- New Section Start -->
-
-              <DIV class="row justify-content-center">
-                      <h2>Create your Story</h2>
-              </DIV>
-
-              <DIV class="row justify-content-center">
-              <DIV class="col-auto">
-                  <!--<h3>Story</h3>-->
-                  <DIV class="row">
-
-                      <form action="charactercreation" method="post">
-                          <!-- removed method="post" and the novalidate-->
-
-                          <DIV class="form-inline align-items-center">
-                              <DIV class="form-group mb-2">
-
-                                  <label for="StorynameFormControlInput">Name your Story</label>
-                                  <input type="text" class="form-control" name="StorynameFormControlInput" placeholder="Name" value="" required>
-                              </DIV>
-                          </DIV>
-
-                          <DIV class="form-inline align-items-center">
-                              <DIV class="form-group mb-2">
-                                  <label for="PlotlineControlSelect">Choose a Plotline</label>
-                                  <select class="form-control" name="PlotlineControlSelect" required>
-                                      <option>Overcoming The Monster</option>
-                                      <option>Rags To Riches</option>
-                                      <option>Quest</option>
-                                      <option>Voyage and Return</option>
-                                      <option>Comedy</option>
-                                      <option>Tragedy</option>
-                                      <option>Rebirth</option>
-                                  </select>
-                              </DIV>
-                          </DIV>
-
-
-                          <DIV class="form-group align-items-center">
-                              <input type ="submit" class="btn btn-secondary btn-lg" value="Submit">
-                          </DIV>
-                          <!--<button type="submit" class="btn btn-primary">Next</button> -->
-                      </form>
-                  </DIV>
-              </DIV>
-
-                  </DIV>
-
-              <!--
-              <DIV class="row justify-content-center">
-                  <H4>
-                      <span class="badge badge-secondary">Characters:
+                <DIV class="row justify-content-center">
+                    <h2>Create your Story</h2>
+                </DIV>
+                
+                <DIV class="row justify-content-center">
+                    <DIV class="col-auto">
+                        <!--<h3>Story</h3>-->
+                        <DIV class="row">
+                            
+                            <form action="charactercreation" method="post">
+                                <!-- removed method="post" and the novalidate-->
+                                
+                                <DIV class="form-inline align-items-center">
+                                    <DIV class="form-group mb-2">
+                                        
+                                        <label for="StorynameFormControlInput">Name your Story</label>
+                                        <input type="text" class="form-control" name="StorynameFormControlInput" placeholder="Name" value="" required>
+                                    </DIV>
+                                </DIV>
+                                
+                                <DIV class="form-inline align-items-center">
+                                    <DIV class="form-group mb-2">
+                                        <label for="PlotlineControlSelect">Choose a Plotline</label>
+                                        <select class="form-control" name="PlotlineControlSelect" required>
+                                            <option>Overcoming The Monster</option>
+                                            <option>Rags To Riches</option>
+                                            <option>Quest</option>
+                                            <option>Voyage and Return</option>
+                                            <option>Comedy</option>
+                                            <option>Tragedy</option>
+                                            <option>Rebirth</option>
+                                        </select>
+                                    </DIV>
+                                </DIV>
+                                
+                                <DIV class="form-group align-items-center">
+                                    <input type ="submit" class="btn btn-secondary btn-lg" value="Submit">
+                                </DIV>
+                                <!--<button type="submit" class="btn btn-primary">Next</button> -->
+                            </form>
+                        </DIV>
+                    </DIV>
+                </DIV>
+                
+                <!--
+                <DIV class="row justify-content-center">
+                    <H4>
+                        <span class="badge badge-secondary">Characters:
                                           {{ CharacternameFormControlInput }} </span>
-                  </H4>
-              </DIV>
-          -->
-              
+                    </H4>
+                </DIV>
+                -->
               <!-- New Section End -->
-          </DIV>
-      </DIV>
-
-
-      </BODY>
+                
+            </DIV>
+        </DIV>
+    </BODY>
 
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
