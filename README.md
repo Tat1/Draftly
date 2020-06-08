@@ -78,7 +78,7 @@ http://localhost:5000/
 
 For Mobile view
 ```
-Your IP address:5000
+Your IP address:5000/
 ```
 ---
 ### Appearance Currently
