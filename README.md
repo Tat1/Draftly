@@ -17,6 +17,7 @@ cd  /DraftInteractive
 ```
 
 Things you need to install include
+
 Install Homebrew
 ```
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
@@ -58,13 +59,26 @@ $ pip install Flask
 
 
 Run the virtual environment
-```
 
+[Old]
+```
 export FLASK_APP=app  
 
 flask run
 
 http://localhost:5000/
+```
+
+[New]
+```
+FLASK_DEBUG=1 python app.py
+
+http://localhost:5000/
+```
+
+For Mobile view
+```
+Your IP address:5000/
 ```
 ---
 ### Appearance Currently
@@ -120,7 +134,9 @@ Method: POST
 * Form Action -> charactercreation
 
   1)StorynameFormControlInput (Story Name)
+  
   2)PlotlineControlSelect (Story Plotline)
+  
 * Button -> charactercreation -> (POST)
 
 NOTE: 
@@ -143,8 +159,9 @@ Method : POST
 
 * Subsequent times into the page/handler from itself! (charactercreation)
 
-- ???
-- ???
+- Character Name
+- Character Role
+- Character Archetypes
 
 ##### PAGE FORM
 
@@ -206,8 +223,9 @@ NOTE:
 * Future Development or Update for Selecting Multiple Story Works
 
 ---
+# Database Aspect that I ended up not using
 
-# Bare Bones of How it used to look like [OLD]
+## Bare Bones of How it used to look like [OLD]
 
 file:///Users/tatidisu/Documents/GitHub/DraftInteractive/app/templates/index.html
 
@@ -395,7 +413,3 @@ Given a plot line, that tells us what phases we go through and then for every ph
 We have a table here which is a table of 3 , foreign keys for plot, phase and role.
 
 Given the plot line you can filter that table down, so that gives you phases and roles, as you work through the phases  that gives you the role you need to pick out for that phases and plot line in order to allow selection of the character and to have that block of text entered.
-
-
-
-
