@@ -69,6 +69,9 @@ def charactercreation():
 
     return render_template('charactercreation.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
 
+app.run(host='0.0.0.0')
+
+
 
 #1 Overcoming The Monster
 #ed_user = Phase(name='Anticipation')
