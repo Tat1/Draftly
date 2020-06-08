@@ -4,6 +4,9 @@ app = Flask(__name__)
 
 # Keep a hold of the stort name and plot type!!!!
 
+storyName = None
+storyPlotline = None
+PlotlineControlSelect = None
 
 
 theCharacters = []
@@ -12,13 +15,13 @@ phasesForStory = None
 
 # STORIES = ['OvercomingTheMonster', 'RagsToRiches', 'Quest', 'VoyageAndReturn', 'Comedy', 'Tradegy','Rebirth' ]
 storyPlotlineToPhase = {
-    'Overcoming_The_Monster' : ['Anticipation', 'Dream', 'Frustration', 'Nightmare', 'Miraculous_Escape'],
-    'Rags_To_Riches' : ['Initial_Wretchedness_then_Call_to_Action', 'Getting_out_into_the_World', 'Central_Crisis', 'Independence_and_Ordeal', 'Fulfillment'],
-    'Quest' : ['The Call', 'The Journey', 'Arrival_and_Frustration', 'Final_Ordeal', 'The Goal'],
-    'Voyage_and_Return' : ['Anticipation_Stage_and_Fall_into_Another_World','Initial_Fascination_or_Dream_Stage','Frustration','Nightmare','Thrilling_Escape_and_Return' ],
-    'Comedy' : ['Establish_the_Status_Quo','Confusion_and_Isolation','Raise_the_Stakes','Problems_Solved'],
-    'Tragedy' : ['Hero_is_Tempted', 'Pursue_Dream','Setback','Spiralling_out_of_control','Decision_and_Consequence' ],
-    'Rebirth' : ['Spell_of_Darkness', 'New_Status_Quo', 'Threat_and_Agony', 'Agony_Continues', 'Redemption']
+    'Overcoming The Monster' : ['Anticipation', 'Dream', 'Frustration', 'Nightmare', 'Miraculous Escape'],
+    'Rags To Riches' : ['Initial Wretchedness then Call to Action', 'Getting out into the World', 'Central Crisis', 'Independence and Ordeal', 'Fulfillment'],
+    'Quest' : ['The Call', 'The Journey', 'Arrival and Frustration', 'Final Ordeal', 'The Goal'],
+    'Voyage and Return' : ['Anticipation Stage and Fall into Another World','Initial Fascination or Dream Stage','Frustration','Nightmare','Thrilling Escape and Return' ],
+    'Comedy' : ['Establish the Status Quo','Confusion and Isolation','Raise the Stakes','Problems Solved'],
+    'Tragedy' : ['Hero is Tempted', 'Pursue Dream','Setback','Spiralling out of control','Decision and Consequence' ],
+    'Rebirth' : ['Spell of Darkness', 'New Status Quo', 'Threat and Agony', 'Agony Continues', 'Redemption']
     }
 
 #Using Jinja
@@ -33,10 +36,10 @@ def newstory():
 
 @app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
-    global phasesForStory
+    global phasesForStory, storyName, storyPlotline, PlotlineControlSelect
 
 
-    return render_template('storyparagraphs.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'], CharacterFormControl=request.form['CharacterFormControl'], characters=theCharacters, phasesForStory=phasesForStory)
+    return render_template('storyparagraphs.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
 
 
 @app.route('/loadstory', methods = ['POST'])
@@ -45,10 +48,11 @@ def loadstory():
 
 @app.route('/charactercreation', methods = ['POST'])
 def charactercreation():
-    global phasesForStory
+    global phasesForStory, storyName, storyPlotline, PlotlineControlSelect
 
     # Comes in on first access:
     if 'PlotlineControlSelect' in request.form:
+        storyName = request.form.get('StorynameFormControlInput')
         storyPlotline = request.form.get('PlotlineControlSelect')
         phasesForStory = storyPlotlineToPhase[storyPlotline]
         # And continue
@@ -63,7 +67,7 @@ def charactercreation():
 
     # Store as a Python dictionary:
 
-    return render_template('charactercreation.html', StorynameFormControlInput=request.form['StorynameFormControlInput'], PlotlineControlSelect=request.form['PlotlineControlSelect'], characters=theCharacters, phasesForStory=phasesForStory)
+    return render_template('charactercreation.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
 
 
 #1 Overcoming The Monster
