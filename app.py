@@ -38,15 +38,20 @@ def newstory():
 def storyparagraphs():
     global phasesForStory, storyName, storyPlotline, PlotlineControlSelect
     
-    phaseName = storyPlotlineToPhase[storyPlotline]
-    textName = paragraphsFormControlTextarea1
-    #paragraphsFormControlTextarea1
-    
-    thePhases.append({'phase' : phaseName,
-                      'text' : textName})
+    if 'paragraphsFormControlTextarea1' in request.form:
+            phaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
+            textName = request.form.get('paragraphsFormControlTextarea1')
+            #paragraphsFormControlTextarea1
+            
+            thePhases.append({'phase' : phaseName,
+                              'text' : textName})
+    else:
+        print('No form Data')
+                
+        
 
-
-    return render_template('storyparagraphs.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
+    return render_template('storyparagraphs.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phases=thePhases)
+#phasesForStory=phasesForStory
 
 
 @app.route('/loadstory', methods = ['POST'])

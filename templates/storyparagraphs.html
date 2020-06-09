@@ -99,23 +99,32 @@
                 </DIV>
                   
                 <DIV class="row justify-content-center">
-                    <form action="storyparagraphs" method="post">
-                        <DIV class="col-auto">
-                            <h3>Phases</h3>
-                            <DIV class="form-group align-items-center">
-                                {% for i in phasesForStory %}
+                    {% for i in phases %}
                                 <DIV class="row">
                                     <DIV class="col">
                                         <DIV class="form-group align-items-center">
-                                            <label for="paragraphsFormControlTextarea1">
-                                                {{i.phase}}</label>
+                                            <DIV class="col">
+                                                {{i.phase}}</DIV>
+                                            <DIV class="col">
+                                            {{i.text}}
+                                            </DIV>
                                             
-                                            <textarea class="form-control" id="paragraphsFormControlTextarea1" rows="3" required>
-                                                {{i.text}}</textarea>
+
                                         </DIV>
                                     </DIV>
                                 </DIV>
                                 {% endfor %}
+                    </DIV>
+                    
+                    <DIV class="row justify-content-center">
+                    <form action="storyparagraphs" method="post">
+                        <DIV class="col-auto">
+                            <h3>Phases</h3>
+                            <DIV class="form-group align-items-center">
+                                
+                                <textarea class="form-control" name="paragraphsFormControlTextarea1" rows="3" required>
+                                                </textarea>
+                            
                                 
                                 <!--
                                 <DIV class="form-group align-items-center">
@@ -126,8 +135,10 @@
                                 <input type="submit" class="btn btn-primary" value="Continue">
                             </DIV>
                         </DIV>
-                    </form>     
+                    </form> 
                 </DIV>
+                    
+                     
                 <!-- New Section End -->
             </DIV>
         </DIV> 
