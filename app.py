@@ -27,7 +27,7 @@ storyPlotlineToPhase = {
 #Using Jinja
 @app.route('/',  methods = ['GET'])
 def startup():
-    return render_template('startup.html')
+    return render_template('index.html')
 
 @app.route('/newstory', methods = ['POST'])
 def newstory():
