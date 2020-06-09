@@ -1,4 +1,4 @@
-# DraftInteractive
+# Draftly
 
 ### Interactive Storytelling
 
