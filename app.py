@@ -81,7 +81,10 @@ def charactercreation():
 
     return render_template('charactercreation.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
 
-app.run(host='0.0.0.0')
+#app.run(host='0.0.0.0')
+const PORT = process.env.PORT || '8080'
+
+app.set("port", PORT);
 #log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), router))
 
 
