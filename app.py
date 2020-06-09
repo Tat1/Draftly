@@ -81,8 +81,8 @@ def charactercreation():
 
     return render_template('charactercreation.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
 
-#app.run(host='0.0.0.0')
-socketio.run(app, port=int(os.environ.get('PORT', '5000')))
+app.run(host='0.0.0.0')
+#socketio.run(app, port=int(os.environ.get('PORT', '5000')))
 
 #log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), router))
 
