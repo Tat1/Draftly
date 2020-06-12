@@ -65,34 +65,40 @@
               
                 <DIV class="row justify-content-center">
                     <h4> 
-                        <span class="badge badge-secondary">Story Name:
-                      {{ storyName }} </span>
-                    </h4>
-                </DIV>
-                <DIV class="row justify-content-center">
-                    <h4> 
-                        <span class="badge badge-secondary">Chosen Plotline:
-                          {{ storyPlotline }}</span>
+                        <span class="badge badge-secondary">
+                            <DIV><h4>Story Name:</h4></DIV>
+                            <DIV>{{ storyName }}</DIV>
+                        </span>
                     </h4>
                 </DIV>
                 <DIV class="row justify-content-center">
                     <h4> 
                         <span class="badge badge-secondary">
-                            <h3>List of Characters</h3>
+                            <DIV><h4>Chosen Plotline:</h4></DIV>
+                          <DIV>{{ storyPlotline }}</DIV>
+                        </span>
+                    </h4>
+                </DIV>
+                <DIV class="row justify-content-center">
+                    <h4> 
+                        <span class="badge badge-secondary">
+                            <DIV><h4>List of Characters</h4></DIV>
                             <DIV class="form-group align-items-center">
-                                {% for i in characters %}
-                                <DIV class="row">
-                                    <DIV class="col">
-                                        {{ i.name }}
-                                    </DIV>
-                                    <DIV class="col">
-                                        {{ i.role }}
-                                    </DIV>
-                                    <DIV class="col">
-                                        {{ i.arche }}
-                                    </DIV>
-                                </DIV>
-                                {% endfor %}
+                                <table class="table">
+                                    <tr>
+                                        {% for i in characters %}
+                                            <th scope="col">
+                                                {{ i.name }}
+                                            </th>
+                                            <th scope="col">
+                                                {{ i.role }}
+                                            </th>
+                                            <th scope="col">
+                                                {{ i.arche }}
+                                            </th>
+                                        {% endfor %}
+                                    </tr>
+                                </table>
                             </DIV>
                         </span>
                     </h4>
