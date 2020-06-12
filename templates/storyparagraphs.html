@@ -84,19 +84,20 @@
                         <span class="badge badge-secondary">
                             <DIV><h4>List of Characters</h4></DIV>
                             <DIV class="form-group align-items-center">
-                                <table class="table">
+                                <table class="table table-dark">
                                     <tr>
+                                        <th scope="row">
                                         {% for i in characters %}
-                                            <th scope="col">
+                                            <DIV>
                                                 {{ i.name }}
-                                            </th>
-                                            <th scope="col">
+
                                                 {{ i.role }}
-                                            </th>
-                                            <th scope="col">
+
                                                 {{ i.arche }}
-                                            </th>
+                                            </DIV>
+
                                         {% endfor %}
+                                        </th>    
                                     </tr>
                                 </table>
                             </DIV>

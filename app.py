@@ -1,5 +1,9 @@
 from flask import Flask, render_template, request
 from flask_cors import CORS
+import os
+
+
+ON_HEROKU = "ON_HEROKU" in os.environ
 
 #app = Flask(__name__)
 
@@ -85,7 +89,8 @@ def charactercreation():
 
     return render_template('charactercreation.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
 
-app.run(host='0.0.0.0', debug=True)
+if (not ON_HEROKU) and __name__ == "__app__":
+    app.run(host='0.0.0.0', debug=True)
 #socketio.run(app, port=int(os.environ.get('PORT', '5000')))
 
 #log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), router))
