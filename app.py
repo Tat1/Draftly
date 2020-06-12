@@ -1,6 +1,10 @@
 from flask import Flask, render_template, request
+from flask_cors import CORS
 
-app = Flask(__name__)
+#app = Flask(__name__)
+
+app = Flask(__name__, static_url_path='', static_folder="static")
+CORS(app)
 
 # Keep a hold of the stort name and plot type!!!!
 
@@ -81,7 +85,7 @@ def charactercreation():
 
     return render_template('charactercreation.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
 
-app.run(host='0.0.0.0')
+app.run(host='0.0.0.0', debug=True)
 #socketio.run(app, port=int(os.environ.get('PORT', '5000')))
 
 #log.Fatal(http.ListenAndServe(":" + os.Getenv("PORT"), router))
