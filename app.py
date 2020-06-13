@@ -55,7 +55,8 @@ def storyparagraphs():
             
             thePhases.append({'phase' : phaseName,
                               'text' : textName})
-    prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
+            
+            prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
     else:
         print('No form Data')
                 
