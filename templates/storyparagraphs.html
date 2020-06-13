@@ -106,21 +106,16 @@
                 </DIV>
                   
                 <DIV class="row justify-content-center">
-                    {% for i in phases %}
-                                <DIV class="row">
-                                    <DIV class="col">
-                                        <DIV class="form-group align-items-center">
-                                            <DIV class="col">
-                                                {{i.phase}}</DIV>
-                                            <DIV class="col">
-                                            {{i.text}}
-                                            </DIV>
-                                            
-
-                                        </DIV>
-                                    </DIV>
-                                </DIV>
-                                {% endfor %}
+                     <DIV class="form-group align-items-center">
+                         {% for i in phases %}
+                         <DIV class="row">
+                             {{i.phase}}
+                         </DIV>
+                         <DIV class="row">
+                             {{i.text}}
+                         </DIV>
+                         {% endfor %}
+                         </DIV>
                     </DIV>
                     
                     <DIV class="row justify-content-center">
