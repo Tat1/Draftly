@@ -48,7 +48,7 @@ def storyparagraphs():
     global phasesForStory, storyName, storyPlotline, PlotlineControlSelect, prevphaseName
     
     
-    prevphaseName = storyPlotlineToPhase[storyPlotline]
+    prevphaseName = [len(thePhases)]
     
     if 'paragraphsFormControlTextarea1' in request.form:
             phaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
