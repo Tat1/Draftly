@@ -46,10 +46,12 @@ def newstory():
 def storyparagraphs():
     global phasesForStory, storyName, storyPlotline, PlotlineControlSelect
     
+    
+    prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
+    
     if 'paragraphsFormControlTextarea1' in request.form:
             phaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
             textName = request.form.get('paragraphsFormControlTextarea1')
-            prevphaseName=storyPlotlineToPhase[storyPlotline]
             #paragraphsFormControlTextarea1
             
             thePhases.append({'phase' : phaseName,
