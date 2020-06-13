@@ -19,6 +19,7 @@ PlotlineControlSelect = None
 thePhases = []
 theCharacters = []
 phasesForStory = None
+prevphaseName= None
 
 
 # STORIES = ['OvercomingTheMonster', 'RagsToRiches', 'Quest', 'VoyageAndReturn', 'Comedy', 'Tradegy','Rebirth' ]
@@ -44,7 +45,7 @@ def newstory():
 
 @app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
-    global phasesForStory, storyName, storyPlotline, PlotlineControlSelect
+    global phasesForStory, storyName, storyPlotline, PlotlineControlSelect, prevphaseName
     
     
     prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
@@ -62,7 +63,7 @@ def storyparagraphs():
                 
         
 
-    return render_template('storyparagraphs.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phases=thePhases, prevphase=prevphaseName)
+    return render_template('storyparagraphs.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phases=thePhases, prevphaseName=prevphaseName)
 #phasesForStory=phasesForStory
 
 
