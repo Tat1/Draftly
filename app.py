@@ -47,7 +47,7 @@ def storyparagraphs():
     global phasesForStory, storyName, storyPlotline, PlotlineControlSelect
     
     
-    prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)+1]
+    prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
     
     
     if 'paragraphsFormControlTextarea1' in request.form:
@@ -56,14 +56,13 @@ def storyparagraphs():
             #paragraphsFormControlTextarea1
             
             thePhases.append({'phase' : phaseName,
-                              'text' : textName,
-                             'prevphase':prevphaseName})
+                              'text' : textName})
     else:
         print('No form Data')
                 
         
 
-    return render_template('storyparagraphs.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phases=thePhases)
+    return render_template('storyparagraphs.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phases=thePhases, prevphase=prevphaseName)
 #phasesForStory=phasesForStory
 
 
