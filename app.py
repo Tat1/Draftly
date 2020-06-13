@@ -19,7 +19,7 @@ PlotlineControlSelect = None
 thePhases = []
 theCharacters = []
 phasesForStory = None
-prevphaseName= None
+prevphaseName= 1
 
 
 # STORIES = ['OvercomingTheMonster', 'RagsToRiches', 'Quest', 'VoyageAndReturn', 'Comedy', 'Tradegy','Rebirth' ]
@@ -48,7 +48,7 @@ def storyparagraphs():
     global phasesForStory, storyName, storyPlotline, PlotlineControlSelect, prevphaseName
     
     
-    prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)+1]
+    prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
     
     
     if 'paragraphsFormControlTextarea1' in request.form:
