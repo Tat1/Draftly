@@ -48,6 +48,7 @@ def storyparagraphs():
     
     
     prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
+        thePhases.append({'prevphase':prevphaseName})
     
     if 'paragraphsFormControlTextarea1' in request.form:
             phaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
@@ -55,8 +56,7 @@ def storyparagraphs():
             #paragraphsFormControlTextarea1
             
             thePhases.append({'phase' : phaseName,
-                              'text' : textName,
-                             'prevphase':prevphaseName})
+                              'text' : textName})
     else:
         print('No form Data')
                 
