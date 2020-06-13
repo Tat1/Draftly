@@ -121,13 +121,16 @@
                          {% endfor %}
                          </DIV>
                     </DIV>
+                <Div>
+                    <h4>Current Phase:</h4>
+                 {% for i in prevphaseName %}
+                            <div>{{i}}</div>
+                            {% endfor %}
+                </Div>
                     
                     <DIV class="row justify-content-center">
                     <form action="storyparagraphs" method="post">
                         <DIV class="col-auto">
-                            {% for i in prevphaseName %}
-                            {{i}}
-                            {% endfor %}
                             <DIV class="form-group align-items-center">
                                 
                                 <textarea class="form-control" name="paragraphsFormControlTextarea1" rows="3" required>

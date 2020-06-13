@@ -19,7 +19,7 @@ PlotlineControlSelect = None
 thePhases = []
 theCharacters = []
 phasesForStory = None
-prevphaseName= None
+prevphaseName = None
 
 
 # STORIES = ['OvercomingTheMonster', 'RagsToRiches', 'Quest', 'VoyageAndReturn', 'Comedy', 'Tradegy','Rebirth' ]
