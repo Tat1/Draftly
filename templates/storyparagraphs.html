@@ -125,7 +125,9 @@
                     <DIV class="row justify-content-center">
                     <form action="storyparagraphs" method="post">
                         <DIV class="col-auto">
-                            <h3>Phases</h3>
+                            {% for i in phases %}
+                            <h3>{{i.prevphase}}</h3>
+                            {% endfor %}
                             <DIV class="form-group align-items-center">
                                 
                                 <textarea class="form-control" name="paragraphsFormControlTextarea1" rows="3" required>
