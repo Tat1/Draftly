@@ -55,7 +55,7 @@ def storyparagraphs():
             textName = request.form.get('paragraphsFormControlTextarea1')
             #paragraphsFormControlTextarea1
             
-            thePhases.append({'hase' : phaseName,
+            thePhases.append({'phase' : phaseName,
                               'text' : textName})
     else:
         print('No form Data')
