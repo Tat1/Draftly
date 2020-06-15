@@ -47,7 +47,7 @@ def newstory():
 def storyparagraphs():
     global phasesForStory, storyName, storyPlotline, PlotlineControlSelect, prevphaseName
 
-
+    phasesForThisStory = storyPlotlineToPhase[storyPlotline]
 
     if 'paragraphsFormControlTextarea1' in request.form:
             phaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
@@ -59,14 +59,28 @@ def storyparagraphs():
     else:
         print('No form Data')
 
-    currentPhaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
+    if len(thePhases) == len(phasesForThisStory):
+        phasesFinished = True
+    else:
+        phasesFinished = False
 
-    return render_template('storyparagraphs.html',
-                           storyName=storyName,
-                           storyPlotline=storyPlotline,
-                           characters=theCharacters,
-                           completedPhases=thePhases,
-                           currentPhaseName=currentPhaseName)
+    if phasesFinished:
+        return render_template('storyparagraphs.html',
+                               storyName=storyName,
+                               storyPlotline=storyPlotline,
+                               characters=theCharacters,
+                               completedPhases=thePhases,
+                               currentPhaseName=None)
+
+    else:
+        currentPhaseName = phasesForThisStory[len(thePhases)]
+
+        return render_template('storyparagraphs.html',
+                               storyName=storyName,
+                               storyPlotline=storyPlotline,
+                               characters=theCharacters,
+                               completedPhases=thePhases,
+                               currentPhaseName=currentPhaseName)
 #phasesForStory=phasesForStory
 
 
