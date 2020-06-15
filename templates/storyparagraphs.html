@@ -7,16 +7,16 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="">
         <meta name="author" content="">
-        
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" HREF = "style.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        
+
         <!-- Custom styles for this template -->
         <link href="https://getbootstrap.com/docs/3.3/examples/starter-template/starter-template.css" rel="stylesheet">
     </HEAD>
-      
+
     <BODY>
         <!-- Navigation -->
         <DIV class="row justify-content-center">
@@ -47,7 +47,7 @@
 
 
         <DIV class="container-fluid">
-          
+
             <DIV class="starter-template">
                 <!-- Strapline-->
                 <DIV class="jumbotron">
@@ -55,16 +55,16 @@
                     <p class="lead"> Choose your creative framework. </p>
                 </DIV>
                 <!-- Strapline -->
-              
+
                 <!-- New Section Start -->
                 <DIV class="row">
                     <DIV class="col" >
                         <h2>Start writing your story</h2>
                     </DIV>
                 </DIV>
-              
+
                 <DIV class="row justify-content-center">
-                    <h4> 
+                    <h4>
                         <span class="badge badge-secondary">
                             <DIV><h4>Story Name:</h4></DIV>
                             <DIV>{{ storyName }}</DIV>
@@ -72,7 +72,7 @@
                     </h4>
                 </DIV>
                 <DIV class="row justify-content-center">
-                    <h4> 
+                    <h4>
                         <span class="badge badge-secondary">
                             <DIV><h4>Chosen Plotline:</h4></DIV>
                           <DIV>{{ storyPlotline }}</DIV>
@@ -80,7 +80,7 @@
                     </h4>
                 </DIV>
                 <DIV class="row justify-content-center">
-                    <h4> 
+                    <h4>
                         <span class="badge badge-secondary">
                             <DIV><h4>List of Characters</h4></DIV>
                             <DIV class="form-group align-items-center">
@@ -97,18 +97,18 @@
                                             </DIV>
 
                                         {% endfor %}
-                                        </th>    
+                                        </th>
                                     </tr>
                                 </table>
                             </DIV>
                         </span>
                     </h4>
                 </DIV>
-                  
+
                 <DIV class="row justify-content-center">
                      <DIV class="form-group align-items-center">
                          <DIV><h4>Completed Phases</h4></DIV>
-                         {% for i in phases %}
+                         {% for i in completedPhases %}
                          <DIV class="row">
                              <h4>
                              {{i.phase}}
@@ -124,40 +124,40 @@
                     </DIV>
                 <Div>
                     <h4>Current Phase:</h4>
-                    <div><p>{{ prevphaseName }}</p></div>
+                    <div><p>{{ currentPhaseName }}</p></div>
                 </Div>
-                    
+
                     <DIV class="row justify-content-center">
                     <form action="storyparagraphs" method="post">
                         <DIV class="col-auto">
                             <DIV class="form-group align-items-center">
-                                
+
                                 <textarea class="form-control" name="paragraphsFormControlTextarea1" rows="3" required>
                                                 </textarea>
-                            
-                                
+
+
                                 <!--
                                 <DIV class="form-group align-items-center">
                                     <input type ="submit" class="btn btn-secondary btn-lg" value="Submit">
-                                </DIV> 
+                                </DIV>
                                 -->
-                                
+
                                 <input type="submit" class="btn btn-primary" value="Continue">
                             </DIV>
                         </DIV>
-                    </form> 
+                    </form>
                 </DIV>
-                    
-                     
+
+
                 <!-- New Section End -->
             </DIV>
-        </DIV> 
+        </DIV>
     </BODY>
-    
+
       <!-- Optional JavaScript -->
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-      
+
 </HTML>

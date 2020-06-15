@@ -46,23 +46,27 @@ def newstory():
 @app.route('/storyparagraphs', methods = ['POST'])
 def storyparagraphs():
     global phasesForStory, storyName, storyPlotline, PlotlineControlSelect, prevphaseName
-    
-    
-    prevphaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)+1]
-    
+
+
+
     if 'paragraphsFormControlTextarea1' in request.form:
             phaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
             textName = request.form.get('paragraphsFormControlTextarea1')
             #paragraphsFormControlTextarea1
-            
+
             thePhases.append({'phase' : phaseName,
                               'text' : textName})
     else:
         print('No form Data')
-                
-        
 
-    return render_template('storyparagraphs.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phases=thePhases, prevphaseName=prevphaseName)
+    currentPhaseName = storyPlotlineToPhase[storyPlotline][len(thePhases)]
+
+    return render_template('storyparagraphs.html',
+                           storyName=storyName,
+                           storyPlotline=storyPlotline,
+                           characters=theCharacters,
+                           completedPhases=thePhases,
+                           currentPhaseName=currentPhaseName)
 #phasesForStory=phasesForStory
 
 
@@ -93,7 +97,9 @@ def charactercreation():
 
     return render_template('charactercreation.html', storyName=storyName, storyPlotline=storyPlotline, characters=theCharacters, phasesForStory=phasesForStory)
 
-if (not ON_HEROKU) and __name__ == "__app__":
+print(__name__)
+
+if (not ON_HEROKU) and __name__ == "__main__":
     app.run(host='0.0.0.0', debug=True)
 #socketio.run(app, port=int(os.environ.get('PORT', '5000')))
 
